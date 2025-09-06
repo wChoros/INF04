@@ -18,9 +18,11 @@ function App() {
     { id: 11, alt: "Garbus", filename: "obraz12.jpg", category: 3, downloads: useState(321) }
   ]
 
-  const [flowersView, setFlowersView] = useState(true)
-  const [animalsView, setAnimalsView] = useState(true)
-  const [carsView, setCarsView] = useState(true)
+  const [visibilityState, setVisibilityState] = useState({
+    1: true,
+    2: true,
+    3: true,
+  })
 
   return (
     <>
@@ -29,54 +31,33 @@ function App() {
       </h1>
       <div className="form-check form-switch form-check-inline">
       <label htmlFor="flowers" className='form-check-label'>Kwiaty</label>
-      <input type="checkbox" name="flowers" id="flowers" className='form-check-input' checked={flowersView} onClick={() => {
-        setFlowersView(flowersView ? false : true)
+      <input type="checkbox" name="flowers" id="flowers" className='form-check-input' checked={visibilityState[1]} onChange={() => {
+        setVisibilityState({ ...visibilityState, 1: (visibilityState[1] ? false: true) })
       }} />
       </div>
 
       <div className="form-check form-switch form-check-inline">
         <label htmlFor="animals" className='form-check-label'>Zwierzęta</label>
-        <input type="checkbox" name="animals" id="animals" className='form-check-input' checked={animalsView} onClick={() => {
-          setAnimalsView(animalsView ? false : true)
+        <input type="checkbox" name="animals" id="animals" className='form-check-input' checked={visibilityState[2]} onChange={() => {
+          setVisibilityState({ ...visibilityState, 2: (visibilityState[2] ? false: true) })
         }} />
       </div>
       <div className="form-check form-switch form-check-inline">
         <label htmlFor="cars" className='form-check-label'>Samochody</label>
-        <input type="checkbox" name="cars" id="cars" className='form-check-input' checked={carsView} onClick={() => {
-          setCarsView(carsView ? false : true)
+        <input type="checkbox" name="cars" id="cars" className='form-check-input' checked={visibilityState[3]} onChange={() => {
+          setVisibilityState({ ...visibilityState, 3: (visibilityState[3] ? false: true) })
         }} />
       </div>
 
       <div className='picture-canvas'>
       {pictures.map((picture) => {
-        switch (picture.category) {
-          case (1):
-            return <div hidden={!flowersView} className='picture-container'>
+        return <div hidden={!visibilityState[picture.category]} className='picture-container' key={picture.id}>
               <img src={`assets/${picture.filename}`} alt={picture.alt}/>
               <h4>Pobrań: {picture.downloads[0]}</h4>
               <button className='btn btn-success' onClick={() => {
                 picture.downloads[1](picture.downloads[0] + 1)
               }}>Pobierz</button>
             </div>
-          case (2):
-            return <div hidden={!animalsView} className='picture-container'>
-              <img src={`assets/${picture.filename}`} alt={picture.alt} />
-              <h4>Pobrań: {picture.downloads[0]}</h4>
-              <button className='btn btn-success' onClick={() => {
-                picture.downloads[1](picture.downloads[0] + 1)
-              }}>Pobierz</button>
-            </div>
-          case (3):
-            return <div hidden={!carsView} className='picture-container'>
-              <img src={`assets/${picture.filename}`} alt={picture.alt} />
-              <h4>Pobrań: {picture.downloads[0]}</h4>
-              <button className='btn btn-success' onClick={() => {
-                picture.downloads[1](picture.downloads[0] + 1)
-              }}>Pobierz</button>
-            </div>
-          default:
-            return null;
-        }
       })}
     </div>
 
