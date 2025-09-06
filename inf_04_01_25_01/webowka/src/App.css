@@ -1,0 +1,18 @@
+.picture-container {
+  float: left;
+}
+
+.picture-container img {
+  margin: 5px;
+  border-radius: 5px;
+
+}
+
+.picture-container h4, .picture-container button, h1, .form-check {
+  margin: 0 5px;
+
+}
+
+.picture-canvas {
+  
+}
