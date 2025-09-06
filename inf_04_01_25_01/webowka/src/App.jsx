@@ -30,36 +30,36 @@ function App() {
         Kategorie zdjęć
       </h1>
       <div className="form-check form-switch form-check-inline">
-      <label htmlFor="flowers" className='form-check-label'>Kwiaty</label>
-      <input type="checkbox" name="flowers" id="flowers" className='form-check-input' checked={visibilityState[1]} onChange={() => {
-        setVisibilityState({ ...visibilityState, 1: (visibilityState[1] ? false: true) })
-      }} />
+        <label htmlFor="flowers" className='form-check-label'>Kwiaty</label>
+        <input type="checkbox" name="flowers" id="flowers" className='form-check-input' checked={visibilityState[1]} onChange={() => {
+          setVisibilityState({ ...visibilityState, 1: (visibilityState[1] ? false : true) })
+        }} />
       </div>
 
       <div className="form-check form-switch form-check-inline">
         <label htmlFor="animals" className='form-check-label'>Zwierzęta</label>
         <input type="checkbox" name="animals" id="animals" className='form-check-input' checked={visibilityState[2]} onChange={() => {
-          setVisibilityState({ ...visibilityState, 2: (visibilityState[2] ? false: true) })
+          setVisibilityState({ ...visibilityState, 2: (visibilityState[2] ? false : true) })
         }} />
       </div>
       <div className="form-check form-switch form-check-inline">
         <label htmlFor="cars" className='form-check-label'>Samochody</label>
         <input type="checkbox" name="cars" id="cars" className='form-check-input' checked={visibilityState[3]} onChange={() => {
-          setVisibilityState({ ...visibilityState, 3: (visibilityState[3] ? false: true) })
+          setVisibilityState({ ...visibilityState, 3: (visibilityState[3] ? false : true) })
         }} />
       </div>
 
       <div className='picture-canvas'>
-      {pictures.map((picture) => {
-        return <div hidden={!visibilityState[picture.category]} className='picture-container' key={picture.id}>
-              <img src={`assets/${picture.filename}`} alt={picture.alt}/>
-              <h4>Pobrań: {picture.downloads[0]}</h4>
-              <button className='btn btn-success' onClick={() => {
-                picture.downloads[1](picture.downloads[0] + 1)
-              }}>Pobierz</button>
-            </div>
-      })}
-    </div>
+        {pictures.map((picture) => {
+          return <div hidden={!visibilityState[picture.category]} className='picture-container' key={picture.id}>
+            <img src={`assets/${picture.filename}`} alt={picture.alt} />
+            <h4>Pobrań: {picture.downloads[0]}</h4>
+            <button className='btn btn-success' onClick={() => {
+              picture.downloads[1](picture.downloads[0] + 1)
+            }}>Pobierz</button>
+          </div>
+        })}
+      </div>
 
     </>
   );
