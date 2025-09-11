@@ -2,7 +2,7 @@ class MyList:
     def __init__(self, list_len: int):
         self.my_list = []
         for i in range(list_len):
-            self.my_list.append(int(input(f"Podaj {i+1} element tablicy: ")))
+            self.my_list.append(int(input(f"Podaj {i + 1} element tablicy: ")))
 
     @staticmethod
     def _find_max(my_list: list):

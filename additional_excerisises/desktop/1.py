@@ -1,4 +1,11 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QGridLayout, QVBoxLayout
+from PyQt6.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QLabel,
+    QWidget,
+    QGridLayout,
+    QVBoxLayout,
+)
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
 
@@ -22,11 +29,7 @@ class MainWindow(QMainWindow):
 
         layout = QVBoxLayout()
 
-
-
-        labels = [
-            QLabel(f"Label {i}", self) for i in range(5)
-        ]
+        labels = [QLabel(f"Label {i}", self) for i in range(5)]
 
         for i, label in enumerate(labels):
             label.setGeometry(0, 0, 1000, 100)
@@ -34,14 +37,12 @@ class MainWindow(QMainWindow):
             color: black
                                 ;
             font-size: 100px;
-            background-color: rgb({i*60},{i*40},{255-(i*50)});
+            background-color: rgb({i * 60},{i * 40},{255 - (i * 50)});
             """)
             label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             layout.addWidget(label)
 
         central_widget.setLayout(layout)
-
-        
 
 
 def main():
