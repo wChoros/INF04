@@ -16,13 +16,13 @@ class ListExcerisise:
         for i, number in enumerate(self.numbers_list):
             print(f"{i}: {number}")
 
-#   **********************************************************************************
-#   nazwa metody:                   find
-#   opis metody:                    metoda szukająca pierwszego elementu tablicy o podanej wartości
-#   parametry:                      number_to_find - wartość szukanego elementu
-#   zwracany typ i opis:            int - index znalezionego elementu lub -1 gdy nie znaleziono
-#   autor:                          00000000000
-#   **********************************************************************************
+    #   **********************************************************************************
+    #   nazwa metody:                   find
+    #   opis metody:                    metoda szukająca pierwszego elementu tablicy o podanej wartości
+    #   parametry:                      number_to_find - wartość szukanego elementu
+    #   zwracany typ i opis:            int - index znalezionego elementu lub -1 gdy nie znaleziono
+    #   autor:                          00000000000
+    #   **********************************************************************************
     def find(self, number_to_find: int):
         for i, number in enumerate(self.numbers_list):
             if number == number_to_find:
@@ -40,6 +40,7 @@ class ListExcerisise:
                 counter += 1
         return counter
 
+
 if __name__ == "__main__":
     list_excerisise = ListExcerisise(50)
     list_excerisise.print()
@@ -51,5 +52,5 @@ if __name__ == "__main__":
     print("Liczby nieparzyste:")
     number_of_odds = list_excerisise.print_odd()
     print(f"Razem nieparzystych: {number_of_odds}")
-    
+
     print(f"Średnia wszystkich elementów: {list_excerisise.avg()}")

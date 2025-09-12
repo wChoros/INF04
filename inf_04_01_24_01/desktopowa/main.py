@@ -8,7 +8,7 @@ from PyQt6.QtWidgets import (
     QLabel,
     QWidget,
     QFormLayout,
-    QFrame
+    QFrame,
 )
 from PyQt6.QtGui import QPixmap
 import sys
@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         }
         """)
 
-        # Personal data section 
+        # Personal data section
 
         personal_data_fr = QFrame(self)
         personal_data_fr.setGeometry(50, 25, 400, 100)
@@ -50,9 +50,8 @@ class MainWindow(QMainWindow):
 
         personal_data_fr.setLayout(personal_data_layout)
 
-
         # Eye colour section
-        
+
         eye_colour_gb = QGroupBox("Kolor Oczu", self)
         eye_colour_gb.setGeometry(50, 150, 400, 140)
         eye_colour_gb.setStyleSheet("""
@@ -70,10 +69,10 @@ class MainWindow(QMainWindow):
         """)
         eye_colour_layout = QFormLayout(eye_colour_gb)
 
-        blue_rd = QRadioButton('niebieskie')
+        blue_rd = QRadioButton("niebieskie")
         blue_rd.setChecked(True)
-        green_rd = QRadioButton('zielone')
-        brown_rd = QRadioButton('piwne')
+        green_rd = QRadioButton("zielone")
+        brown_rd = QRadioButton("piwne")
 
         eye_colour_layout.addRow(blue_rd)
         eye_colour_layout.addRow(QWidget())
@@ -81,16 +80,14 @@ class MainWindow(QMainWindow):
         eye_colour_layout.addRow(QWidget())
         eye_colour_layout.addRow(brown_rd)
 
-
         self.person_label = QLabel(self)
         self.person_label.setScaledContents(True)
-        self.person_label.setGeometry(500, 35, 195 , 225)
+        self.person_label.setGeometry(500, 35, 195, 225)
         self.person_label.setPixmap(QPixmap("000-zdjecie.jpg"))
-
 
         self.fingerprint_label = QLabel(self)
         self.fingerprint_label.setScaledContents(True)
-        self.fingerprint_label.setGeometry(750, 35, 150 , 225)
+        self.fingerprint_label.setGeometry(750, 35, 150, 225)
         self.fingerprint_label.setPixmap(QPixmap("000-odcisk.jpg"))
 
         # Submit button
