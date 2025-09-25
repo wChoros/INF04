@@ -77,3 +77,25 @@ layout.addWidget(button)
 
 
 ```
+
+## Images
+```python
+from PyQt6.QtGui import QPixmap
+from PyQt6.QWidgets import QLabel
+
+self.image = QLabel()
+pixmap = QPixmap('cat.jpg')
+self.image.setPixmap(pixmap)
+image.setScaledContents(True)
+```
+
+## Button icons
+
+```python
+from PyQt6.QtGui import QIcon
+from PyQt6.QtCore import QSize
+
+self.button = QPushButton(self)
+self.button.setIcon(QIcon("image.png"))
+self.button.setIconSize(QSize(100, 70))
+```
