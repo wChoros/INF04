@@ -1,17 +1,13 @@
 import random
 
-"""
-************************************************
-nazwa: throw_cubes
-opis: metoda służąca do losowania tablicy liczb całkowitych <1, 6> w ilości podanej w argumencie
-parametry: number_of_cubes - ilość liczb do wylosowania do tablicy
 
-zwracany typ i opis: list[int] - lista liczb całkowitych z przedziału <1, 6>, o długości podanej w argumencie
-autor: 00000000000
-************************************************
-"""
-
-
+# ************************************************
+# nazwa: throw_cubes
+# opis: metoda służąca do losowania tablicy liczb całkowitych <1, 6> w ilości podanej w argumencie
+# parametry: number_of_cubes - ilość liczb do wylosowania do tablicy
+# zwracany typ i opis: list[int] - lista liczb całkowitych z przedziału <1, 6>, o długości podanej w argumencie
+# autor: 00000000000
+# ************************************************
 def throw_cubes(number_of_cubes: int):
     cubes = []
     for _ in range(number_of_cubes):
