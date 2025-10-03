@@ -26,10 +26,3 @@ def cesar_encrypt(text: str, key: int):
         output += letter
 
     return output
-
-
-if __name__ == "__main__":
-    text = input("Podaj tekst do zaszyfrowania: ")
-    key = input("Podaj klucz (numer): ")
-
-    print(f"\nZaszyfrowany tekst: \n{cesar_encrypt(text, int(key))}")
