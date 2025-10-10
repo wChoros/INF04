@@ -1,5 +1,5 @@
 class Sort:
-    """A collection of sorting algorithms with intentional limitations."""
+    """A collection of sorting algorithms"""
 
     def bubble(self, arr):
         """

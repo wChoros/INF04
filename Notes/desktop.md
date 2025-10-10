@@ -74,8 +74,6 @@ layoutv = QVBoxLayout()
 layouth = QHBoxLayout()
 
 layout.addWidget(button)
-
-
 ```
 
 ## Images
@@ -98,4 +96,19 @@ from PyQt6.QtCore import QSize
 self.button = QPushButton(self)
 self.button.setIcon(QIcon("image.png"))
 self.button.setIconSize(QSize(100, 70))
+```
+
+## File dialogs
+
+```python
+def openFileDialog(self):
+    file_dialog = QFileDialog(self)
+    file_dialog.setWindowTitle("Open File")
+    file_dialog.setFileMode(QFileDialog.FileMode.AnyFile)
+    selected_files = None
+    if file_dialog.exec():
+        selected_files = file_dialog.filesSelected
+    if selected_files:
+        with open(selected_files[0], 'w') as file:
+            file.write("jebanie")
 ```
