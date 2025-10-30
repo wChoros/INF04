@@ -65,10 +65,9 @@ class MainWindow(QMainWindow):
         top_text = self.top_text_edit.toPlainText()
         bottom_text = self.bottom_text_edit.toPlainText()
         color = self.current_color
-        create_image_with_text(top_text, bottom_text, color)
-        # if there is not images folder, create it
         if not os.path.exists("images"):
             os.makedirs("images")
+        create_image_with_text(top_text, bottom_text, color)
 
         opened_image = QPixmap("images/output.png")
         self.image_label.setPixmap(opened_image)
