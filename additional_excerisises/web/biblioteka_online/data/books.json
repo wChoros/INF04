@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "title": "Wiedźmin: Ostatnie życzenie",
+        "author": "Andrzej Sapkowski",
+        "year": 1993
+    },
+    {
+        "id": 2,
+        "title": "Wiedźmin: Miecz przeznaczenia",
+        "author": "Andrzej Sapkowski",
+        "year": 1992
+    },
+    {
+        "id": 3,
+        "title": "Wiedźmin: Krew elfów",
+        "author": "Andrzej Sapkowski",
+        "year": 1994
+    },
+    {
+        "id": 4,
+        "title": "Wiedźmin: Czas pogardy",
+        "author": "Andrzej Sapkowski",
+        "year": 1995
+    },
+    {
+        "id": 5,
+        "title": "Wiedźmin: Chrzest ognia",
+        "author": "Andrzej Sapkowski",
+        "year": 1996
+    },
+    {
+        "id": 6,
+        "title": "Wiedźmin: Wieża Jaskółki",
+        "author": "Andrzej Sapkowski",
+        "year": 1997
+    },
+    {
+        "id": 7,
+        "title": "Wiedźmin: Pani Jeziora",
+        "author": "Andrzej Sapkowski",
+        "year": 1999
+    },
+    {
+        "id": 8,
+        "title": "Sezon burz",
+        "author": "Andrzej Sapkowski",
+        "year": 2013
+    },
+    {
+        "id": 9,
+        "title": "Narrenturm",
+        "author": "Andrzej Sapkowski",
+        "year": 2002
+    },
+    {
+        "id": 10,
+        "title": "Boży bojownicy",
+        "author": "Andrzej Sapkowski",
+        "year": 2004
+    },
+    {
+        "id": 11,
+        "title": "Mewo",
+        "author": "Jan Kowalski",
+        "year": 2006
+    }
+]

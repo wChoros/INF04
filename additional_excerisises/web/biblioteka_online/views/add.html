@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj książkę - Biblioteka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">📚 Biblioteka</h1>
+            <ul class="nav-menu">
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/about">O nas</a></li>
+                <li><a href="/add" class="active">Dodaj książkę</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container add-page">
+        <section class="form-header">
+            <h2>Dodaj nową książkę</h2>
+            <p class="lead">Wypełnij formularz, aby dodać książkę do naszej kolekcji</p>
+        </section>
+
+        <form class="book-form" id="bookForm">
+            <div class="form-group">
+                <label for="title">Tytuł książki *</label>
+                <input type="text" id="title" name="title" required placeholder="Wprowadź tytuł">
+            </div>
+
+            <div class="form-group">
+                <label for="author">Autor *</label>
+                <input type="text" id="author" name="author" required placeholder="Imię i nazwisko autora">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" id="isbn" name="isbn" placeholder="978-83-xxxxx-xx-x">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Rok wydania</label>
+                    <input type="number" id="year" name="year" min="1000" max="2025" placeholder="2024">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="genre">Gatunek *</label>
+                <select id="genre" name="genre" required>
+                    <option value="">Wybierz gatunek</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="sf">Science Fiction</option>
+                    <option value="kryminał">Kryminał</option>
+                    <option value="romans">Romans</option>
+                    <option value="historyczna">Powieść historyczna</option>
+                    <option value="biografia">Biografia</option>
+                    <option value="poradnik">Poradnik</option>
+                    <option value="poezja">Poezja</option>
+                    <option value="dramat">Dramat</option>
+                    <option value="inne">Inne</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="publisher">Wydawnictwo</label>
+                <input type="text" id="publisher" name="publisher" placeholder="Nazwa wydawnictwa">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pages">Liczba stron</label>
+                    <input type="number" id="pages" name="pages" min="1" placeholder="350">
+                </div>
+
+                <div class="form-group">
+                    <label for="language">Język</label>
+                    <select id="language" name="language">
+                        <option value="polski">Polski</option>
+                        <option value="angielski">Angielski</option>
+                        <option value="niemiecki">Niemiecki</option>
+                        <option value="francuski">Francuski</option>
+                        <option value="inny">Inny</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Opis książki</label>
+                <textarea id="description" name="description" rows="5" placeholder="Krótki opis treści książki..."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="available" name="available" checked>
+                    <span>Książka dostępna do wypożyczenia</span>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Dodaj książkę</button>
+                <button type="reset" class="btn btn-secondary">Wyczyść formularz</button>
+            </div>
+        </form>
+
+        <div class="success-message" id="successMessage" style="display: none;">
+            <div class="message-content">
+                <span class="icon">✓</span>
+                <div>
+                    <h4>Książka została dodana!</h4>
+                    <p>Pomyślnie dodano nową książkę do biblioteki.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Biblioteka. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('bookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const successMsg = document.getElementById('successMessage');
+            successMsg.style.display = 'block';
+            
+            this.reset();
+            
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
