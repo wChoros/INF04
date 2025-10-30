@@ -1,10 +1,23 @@
-from PyQt6.QtWidgets import QMainWindow, QApplication, QGroupBox, QPlainTextEdit, QLabel, QPushButton, QGridLayout, QWidget, QFileDialog
+from PyQt6.QtWidgets import (
+    QMainWindow,
+    QApplication,
+    QGroupBox,
+    QPlainTextEdit,
+    QLabel,
+    QPushButton,
+    QGridLayout,
+    QWidget,
+    QFileDialog,
+)
 from PyQt6.QtGui import QPixmap
 import sys
-
+import os
 from PIL import Image, ImageDraw, ImageFont
 
-def create_image_with_text(top_text, bottom_text, text_color, output_path="images/output.png"):
+
+def create_image_with_text(
+    top_text, bottom_text, text_color, output_path="images/output.png"
+):
     # Create 500x500 black image
     img = Image.new("RGB", (500, 500), color="black")
     draw = ImageDraw.Draw(img)
@@ -31,6 +44,7 @@ def create_image_with_text(top_text, bottom_text, text_color, output_path="image
     img.save(output_path)
     print(f"Saved {output_path}")
 
+
 # Example:
 # create_image_with_text("Hello", "World", "red")
 
@@ -52,13 +66,17 @@ class MainWindow(QMainWindow):
         bottom_text = self.bottom_text_edit.toPlainText()
         color = self.current_color
         create_image_with_text(top_text, bottom_text, color)
+        # if there is not images folder, create it
+        if not os.path.exists("images"):
+            os.makedirs("images")
+
         opened_image = QPixmap("images/output.png")
         self.image_label.setPixmap(opened_image)
 
     def change_color(self, color_name):
         self.current_color = color_name
         print(f"Selected color: {color_name}")
-    
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Simple Image Creator")
@@ -66,34 +84,33 @@ class MainWindow(QMainWindow):
         self.setStyleSheet("""
 
 """)
-        self.current_color = 'black'
+        self.current_color = "black"
 
         self.left_group = QGroupBox("Add Texts", self)
-        self.left_group.setGeometry(20,50,400,500)
+        self.left_group.setGeometry(20, 50, 400, 500)
 
         self.top_text_edit = QPlainTextEdit(self.left_group)
         self.top_text_edit.setGeometry(30, 70, 350, 70)
         top_text_label = QLabel("Top text", self.left_group)
-        top_text_label.setGeometry(30, 55, 50,15)
+        top_text_label.setGeometry(30, 55, 50, 15)
 
         self.bottom_text_edit = QPlainTextEdit(self.left_group)
         self.bottom_text_edit.setGeometry(30, 170, 350, 70)
         bottom_text_label = QLabel("Bottom text", self.left_group)
         bottom_text_label.setGeometry(30, 155, 100, 15)
-        
+
         change_colour_label = QLabel("Change Colour", self.left_group)
         change_colour_label.setGeometry(30, 300, 100, 15)
-        
 
         self.buttons = []
-        self.colors = ['black', 'white', 'yellow', 'red', 'purple', 'aqua']
+        self.colors = ["black", "white", "yellow", "red", "purple", "aqua"]
 
         buttons_grid = QGridLayout()
         buttons_widget = QWidget(self.left_group)
         buttons_widget.setGeometry(30, 320, 130, 100)
 
         self.buttons = []
-        positions = [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
+        positions = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]
         for color_name in self.colors:
             btn = QPushButton(buttons_widget)
             btn.clicked.connect(lambda checked, cn=color_name: self.change_color(cn))
@@ -113,14 +130,10 @@ class MainWindow(QMainWindow):
         self.save_button.setGeometry(600, 565, 100, 70)
         self.save_button.clicked.connect(self.save_image)
 
-
-
         self.image_label = QLabel(self)
         self.image_label.setGeometry(450, 50, 400, 500)
         self.image_label.setScaledContents(True)
         self.image_label.setPixmap(QPixmap("images/instrument.jpg"))
-
-
 
 
 if __name__ == "__main__":
