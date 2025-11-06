@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:paddingTop="100dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moje ulubione owoce 🍎"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_margin="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/fruitName"
+        android:hint="Wpisz nazwę owocu..."
+        />
+
+    <Button
+        android:layout_margin="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0F0"
+        android:layout_gravity="center"
+        android:text="DODAJ"
+        app:cornerRadius="20dp"
+        android:id="@+id/fruitButton"/>
+
+    <ListView
+        android:id="@+id/listOfFruits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
