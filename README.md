@@ -1,5 +1,22 @@
 # INF04
-INF 04 preparation
+To repozytorium zawiera rozwiązanie egzaminy INF04 z poprzednich lat. Egzamin INF04 jest w Polsce wymagany aby uzyskać tytuł technika programisty. Dodatkowo w folderze /additional_excerisises są dodatkowe zadania przygotowujące przygotowane przez nauczycieli, lub innych internetowych twórców.
+
+## Stack:
+ - Console apps - Python
+ - Web apps - Node.js + React
+ - Mobile Apps - Java (Android)
+ - Desktop Apps - Python with PyQt6
+
+
+## Screenshots
+![Memory game](./asstets/memory.png "Memory")
+![Color picker](./asstets/colors.png "Color Picker")
+![Library Website](./asstets/library.png "Library website")
+![Quiz Game](./asstets/quiz.png "Quiz Game")
+![House items exam](./asstets/house_items.png "House Items Exam")
+
+
+
 
 # Rodmap
 
