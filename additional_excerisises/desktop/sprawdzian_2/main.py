@@ -108,7 +108,7 @@ QLabel{
                 lambda x, pos=(8 - i): self.switch_bit(pos)
             )
 
-        self.check_for_win
+        self.check_for_win()
 
 
 if __name__ == "__main__":

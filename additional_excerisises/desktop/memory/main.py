@@ -90,7 +90,7 @@ class MainWindow(QMainWindow):
                 if is_positive
                 else "Jak ty tego nie wygrałeś, przecież to jest trywialne?"
             )
-            + f"\Ilość prób nietrafionych: {self.num_of_missmatches}"
+            + f"\nIlość prób nietrafionych: {self.num_of_missmatches}"
         )
         message.exec()
 
