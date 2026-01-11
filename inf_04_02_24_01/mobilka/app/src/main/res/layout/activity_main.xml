@@ -2,78 +2,73 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#90EE90">
+    android:background="#90EE90"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2E8B57"
-        android:textSize="13pt"
+        android:layout_height="50dp"
         android:text="Wizyta u weterynarza"
-        />
-
+        android:textSize="16pt"
+        android:background="#2E8B57"/>
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Imię i nazwisko właściciela">
-
-    </EditText>
-
+        android:layout_height="40dp"
+        android:hint="Imię i nazwisko właściciela..."/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gatunek">
-    </TextView>
-
-    <ListView
+        android:id="@+id/gatunek"
+        android:textSize="10pt"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
-    </ListView>
-
-    <LinearLayout
+        android:layout_height="30dp"
+        android:text="Gatunek"/>
+    <ListView
+        android:id="@+id/animal_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ile ma lat?">
-
-        </TextView>
+            android:id="@+id/age_text"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="Ile ma lat? 0"
+            android:textSize="7pt"
+            android:gravity="center"/>
         <SeekBar
-            android:id="@+id/age"
+            android:id="@+id/age_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </SeekBar>
+            android:layout_height="match_parent" />
     </LinearLayout>
+    <EditText
+        android:id="@+id/purpose"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Cel wizyty"/>
 
     <EditText
+        android:id="@+id/time"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cel wizyty">
-
-    </EditText>
-
-
-    <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_height="40dp"
         android:inputType="time"
-        android:text="16:00" />
+        android:text="16:00"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="OK">
+        android:id="@+id/submit"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="OK"/>
 
-    </Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/visit_details"
+        />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
